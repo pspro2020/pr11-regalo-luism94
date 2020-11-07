@@ -29,7 +29,6 @@ public class Student implements Runnable {
 			System.out.println(String.format(Messages.STUDENT_INTERRUPTED, LocalDateTime.now().format(Messages.TIME_FORMATTER), id));
 			return;
 		}
-		
 	}
 
 	private int getMoney() throws InterruptedException {
@@ -37,8 +36,7 @@ public class Student implements Runnable {
 		//El hilo espera esa cantidad en segundos antes de retornar el valor del dinero
 		Random rndm = new Random();
 		int waitingTime = rndm.nextInt(8) + 3;
-		TimeUnit.SECONDS.sleep(waitingTime);
+		TimeUnit.MICROSECONDS.sleep(waitingTime);
 		return rndm.nextInt(4) + 2;
 	}
-
 }
